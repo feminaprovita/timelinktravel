@@ -30,7 +30,6 @@
 │   ├── trip.js
 │   ├── user.js
 │   └── user.spec.js
-├── grace-shopper
 ├── package-lock.json
 ├── package.json
 ├── public
