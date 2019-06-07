@@ -2,6 +2,7 @@ node_modules
 public/bundle.js
 public/bundle.js.map
 secrets.js
+.my_key.enc
+scrap.md
 npm-debug.log
 yarn-error.log
-.travis.yml

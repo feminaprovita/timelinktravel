@@ -11,14 +11,17 @@ class AllDestinations extends Component {
   }
 
   render() {
+    console.log(this.props.destinationArr)
     return (
       <div>
-        <h3 className="title">Destinations</h3>
-        <ul className="destinationsList">
-          {this.props.destinationArr.map(dest => {
-            return <OneDestination dest={dest} key={dest.id} />
-          })}
-        </ul>
+        <div className="redundant">
+          <h3 className="title">Destinations</h3>
+          <ul className="destinationsList">
+            {this.props.destinationArr.map(dest => (
+              <OneDestination dest={dest} key={dest.id} />
+            ))}
+          </ul>
+        </div>
       </div>
     )
   }
@@ -37,5 +40,8 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(AllDestinations)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(AllDestinations)
 )

@@ -1,3 +1,5 @@
+
+
 language: node_js
 node_js:
 - node
@@ -23,4 +25,4 @@ deploy:
   provider: heroku
   app: timelinktravel
   api_key:
-    secure: YP/OVVEFBwbtFkEWkm8CL6WLxqefy7V/1gkYwXlqmjjzuzAjint80vA5yj2dWbtfVHSoo5p06NdxIR+WRXF3rxirAS29WwqDKFyUL7r7dh0YV2RnKz4QvlNcfF+yvpsZD1wwKxYR8REcXBPqBPLmMCkyLUVbN1+6CcomDQWTwIgjlsRLYZsX5+b1AnWkdARUTPbE84/SxkWnpWQ3xfNihi2FbyQE9O3O2cPOpIXbX4sbFupvzIEzs2c0g1akokjp55IYgoXbH9+gA616bQHN8XCJWd/rRlMxOSSqqLzjQ+VRjKQPpk79rQdJwyhfu0L4m0+CFg8Aj+VaNG8gzQNEY0DQ8TPrYNC5J4ZClf/b8xz2qoTUgwWELEMG2/8RYo1QC9Z7LOFJ7ojyZsrt3wxn0LSa1uvozFGlWjU3yowgSPzI/lfi5fTvsJBfztqSYrS2HCOKSvAtCjen7LCciNacjFsQi8GD13kYwsJv6UfTO93ib8WZQLAe3VgljMt6gjho/JY/SNwOcwjbzC4pJZncXTwMUcJRfSRhbvyPdHlVLaXq1SN2CcFas19H0AEz94BfbyjvHiHohYPHAyLiPOyQuYf2VOUSA19mSdr2zJSzlZo6FQEqNs1SYRZv7UdACIpn/uHHvoykpVFs17rWfHmeaUeoIOUEDts0d4yErPZya8g=
+    secure: "ENCODEDSECUREVAR"

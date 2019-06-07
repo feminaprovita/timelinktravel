@@ -4,6 +4,8 @@ module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: [
     '@babel/polyfill', // enables async-await
+    'react',
+    'react-dom',
     './client/index.js'
   ],
   output: {
