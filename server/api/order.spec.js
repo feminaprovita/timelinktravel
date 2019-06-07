@@ -64,7 +64,7 @@ describe('Order routes', () => {
       return Trip.bulkCreate([bigBangTrip, frenchRevTrip])
     })
 
-    it('Gets trips, eager loads destinations', async () => {
+    xit('Gets trips, eager loads destinations', async () => {
       //should return array of trips
       const res = await request(app)
         .get(`/api/order/1`)
