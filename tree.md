@@ -2,7 +2,6 @@
 ├── README.md
 ├── Social_Contract.md
 ├── client
-│   ├── app.js
 │   ├── components
 │   │   ├── allDestinations.js
 │   │   ├── authForm.js
@@ -19,17 +18,18 @@
 │   │   ├── orderHistory.js
 │   │   ├── userHome.js
 │   │   └── userHome.spec.js
+│   ├── app.js
 │   ├── history.js
 │   ├── index.js
 │   ├── routes.js
 │   ├── socket.js
 │   └── store
-│   ├── destination.js
-│   ├── index.js
-│   ├── order.js
-│   ├── trip.js
-│   ├── user.js
-│   └── user.spec.js
+│   │   ├── destination.js
+│   │   ├── index.js
+│   │   ├── order.js
+│   │   ├── trip.js
+│   │   ├── user.js
+│   │   └── user.spec.js
 ├── package-lock.json
 ├── package.json
 ├── public

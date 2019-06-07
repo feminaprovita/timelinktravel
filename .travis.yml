@@ -1,27 +1,26 @@
 language: node_js
 node_js:
-  - node # uses most recent stable node version
+- node
 services:
-  - postgresql # starts up postgres
+- postgresql
 addons:
-  postgresql: '9.6' # highest available postgres version on Travis
-dist: trusty # uses trusty environment
-sudo: false # when on trusty, uses Docker containers for speed
+  postgresql: '9.6'
+dist: trusty
+sudo: false
 notifications:
   email:
-    on_success: change # default: change (only when going from broken to fixed)
-    on_failure: always # default: always (which is annoying, as it should be)
+    on_success: change
+    on_failure: always
 install:
-  - npm ci # faster, goes only from package-lock
+- npm ci
 before_script:
-  - psql -c 'create database "grace-shopper-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
-
+- psql -c 'create database "timelink-test";' -U postgres
 before_deploy:
-  - npm run build-client # make the bundle
-  - rm -rf node_modules # omit from the tarball, since we skip cleanup
+- npm run build-client
+- rm -rf node_modules
 deploy:
-  skip_cleanup: true # prevents travis from deleting the build
+  skip_cleanup: true
   provider: heroku
-  app: pm-grace-shopper # see README
+  app: timelinktravel
   api_key:
-    secure: WhUTNMZqcTBeqZ5cdsqFH9c7Vjw5Nr1dqk9wO6JHQq8EGI0VPd2OrDP6DZrzUDgkLuYguHM9gCh/J1+MpK/GUZ62HSxzj9aipIZ8mPEDMkUG7IbGUoRtWafIZ+7r4/hmm4KDVlkOASeu/bRkuIg88NE29cfyWE31GWsJQiS/dKcXz0pK6QVJ+rMJ2Nfl7WZ7iWjVHbbdwagLsaJf0on2/+gb2RYnprPJNRetN7PZYIEkS1ew3Wwh0wbq9L1r5KPDJEZBwm+mXZbbXz47ts9xjpruU+TyLHV/AiuVHKk4rwnR7IDrt6NWxsxnkO7QVje5GM4dcwhequiAAK2OQXm8Ozyy/SNy4Mpz6VtGXl/3giRrHJG46ddLjyDAlq5ceAjlLCaj39Yy0ukmEy5JVD2oPNdbsSRWS+Wga1+9Q7+1gdQhi45e6CC5fMapPO/lnxlYSVvHgfUeZdWHemoZatu/pLY08KVZgQ4cMK0TLx2xRVLN17kt3GAPwdCqStMCp/mojGK4DQO+Qe4vuNxnNByWJmOGtx8xZb7JxHsGZ3ZIRs2AXVwpTPSpSHzqa+Mx16jR+Nv/a0GptS6MdB0MKM0mJaHe0weymFfcTODb99D1/DKwsri5966N8OgDUk6QIoYG9T5mkQ4vLk+EiYlXKgh6ChJwMZwYA3CVSBFsN03HOVc=
+    secure: YP/OVVEFBwbtFkEWkm8CL6WLxqefy7V/1gkYwXlqmjjzuzAjint80vA5yj2dWbtfVHSoo5p06NdxIR+WRXF3rxirAS29WwqDKFyUL7r7dh0YV2RnKz4QvlNcfF+yvpsZD1wwKxYR8REcXBPqBPLmMCkyLUVbN1+6CcomDQWTwIgjlsRLYZsX5+b1AnWkdARUTPbE84/SxkWnpWQ3xfNihi2FbyQE9O3O2cPOpIXbX4sbFupvzIEzs2c0g1akokjp55IYgoXbH9+gA616bQHN8XCJWd/rRlMxOSSqqLzjQ+VRjKQPpk79rQdJwyhfu0L4m0+CFg8Aj+VaNG8gzQNEY0DQ8TPrYNC5J4ZClf/b8xz2qoTUgwWELEMG2/8RYo1QC9Z7LOFJ7ojyZsrt3wxn0LSa1uvozFGlWjU3yowgSPzI/lfi5fTvsJBfztqSYrS2HCOKSvAtCjen7LCciNacjFsQi8GD13kYwsJv6UfTO93ib8WZQLAe3VgljMt6gjho/JY/SNwOcwjbzC4pJZncXTwMUcJRfSRhbvyPdHlVLaXq1SN2CcFas19H0AEz94BfbyjvHiHohYPHAyLiPOyQuYf2VOUSA19mSdr2zJSzlZo6FQEqNs1SYRZv7UdACIpn/uHHvoykpVFs17rWfHmeaUeoIOUEDts0d4yErPZya8g=
